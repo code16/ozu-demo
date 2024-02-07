@@ -3,5 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return \App\Models\Project::all()->toArray();
+    return view('projects', [
+        'projects' => App\Models\Project::all()
+    ]);
 });

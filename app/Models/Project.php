@@ -16,10 +16,10 @@ class Project extends JockoModel
 {
     use HasFactory;
 
-//    protected $casts = [
-//        'reference' => JockoCustomAttribute::class,
-//        'year' => JockoCustomAttribute::class . ':integer',
-//    ];
+    protected array $jockoCustomAttributes = [
+        'reference',
+        'year',
+    ];
 
     public function visuals(): MorphMany
     {

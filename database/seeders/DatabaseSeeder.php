@@ -4,18 +4,25 @@ namespace Database\Seeders;
 
 use App\Models\Project;
 use Code16\JockoClient\Eloquent\Media;
-use Illuminate\Database\Seeder;
+use Code16\JockoClient\Support\Database\JockoSeeder;
 
-class DatabaseSeeder extends Seeder
+class DatabaseSeeder extends JockoSeeder
 {
     /**
      * Seed the application's database.
      */
     public function run(): void
     {
+        $this->clearMediaDirectory();
+
         Project::factory()
-            ->has(Media::factory(), 'cover')
-            ->has(Media::factory()->count(3), 'visuals')
+            ->count(10)
+            ->has(Media::factory()->image('cover')->withFile(), 'cover')
+            ->has(Media::factory()->image('visuals')->withFile()->count(3), 'visuals')
+            ->sequence(fn () => [
+                'year' => fake()->numberBetween(2000, 2024),
+                'reference' => fake()->numerify('##-###'),
+            ])
             ->create();
     }
 }

@@ -9,7 +9,9 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        return view('pages.projects');
+        return view('pages.projects', [
+            'projects' => Project::simplePaginate(12),
+        ]);
     }
 
     /**

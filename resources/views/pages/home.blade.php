@@ -3,7 +3,7 @@
 <x-layout>
     <div class="relative flex items-center overflow-hidden h-[calc(100vh-2rem)] p-12">
         <img class="absolute inset-0 w-full h-full object-cover" src="{{ asset('/img/hero.avif') }}" role="presentation" alt="">
-        <div class="absolute inset-0 from-black/30 to-black/0  bg-gradient-to-r"></div>
+        <div class="absolute inset-0 from-black/40 to-black/0  bg-gradient-to-r"></div>
         <div class="relative text-9xl uppercase font-bold text-white">
             The best<br><em>Whatever</em><br>in town
         </div>
@@ -40,9 +40,19 @@
                     <x-project-item :project="$project" />
                 @endforeach
             </div>
-            <a href="{{ route('projects.index') }}">
-                Browser projects
-            </a>
+            <div class="text-center">
+                <a href="{{ route('projects.index') }}">
+                    Browser projects
+                </a>
+            </div>
+        </x-section>
+        <x-section>
+            <div>
+                <a href="{{ route('contact') }}">Contact</a>
+            </div>
+            <div>
+                <a href="{{ route('team') }}">Team</a>
+            </div>
         </x-section>
     </div>
 </x-layout>

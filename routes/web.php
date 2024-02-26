@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\Pages\ContactPageController;
 use App\Http\Controllers\Pages\HomePageController;
-use App\Http\Controllers\Pages\TeamPageController;
+use App\Http\Controllers\Pages\AboutPageController;
 use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,8 +15,8 @@ Route::get('/projects', [ProjectController::class, 'index'])
 Route::get('/projects/{project}', [ProjectController::class, 'show'])
     ->name('projects.show');
 
-Route::get('/team', TeamPageController::class)
-    ->name('team');
+Route::get('/about', AboutPageController::class)
+    ->name('about');
 
 Route::get('/contact', ContactPageController::class)
     ->name('contact');

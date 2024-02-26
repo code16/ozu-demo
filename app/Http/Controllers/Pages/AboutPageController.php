@@ -5,12 +5,12 @@ namespace App\Http\Controllers\Pages;
 use App\Http\Controllers\Controller;
 use App\Models\Page;
 
-class TeamPageController extends Controller
+class AboutPageController extends Controller
 {
     public function __invoke()
     {
-        return view('pages.team', [
-            'page' => Page::firstWhere('key', 'team')
+        return view('pages.about', [
+            'page' => Page::firstWhere('custom_properties.key', 'about')
         ]);
     }
 }

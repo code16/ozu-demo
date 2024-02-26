@@ -17,22 +17,14 @@ class Page extends JockoModel
     use HasFactory;
 
     protected array $jockoCustomAttributes = [
-        'reference',
-        'year',
+        'key',
     ];
-
-    public function visuals(): MorphMany
-    {
-        return $this->morphMany(Media::class, 'model')
-            ->where('model_key', 'visuals')
-            ->orderBy('order');
-    }
 
     public static function configureJockoCollection(JockoCollectionConfig $config): JockoCollectionConfig
     {
         return $config
-            ->setLabel('Projects')
-            ->setIcon('fa-ruler-combined')
+            ->setLabel('Pages')
+            ->setIcon('fa-file')
             ->setHasPublicationState();
     }
 
@@ -40,31 +32,16 @@ class Page extends JockoModel
     {
         return $config
             ->addColumn(JockoColumn::makeImage('cover', 1))
-            ->addColumn(JockoColumn::makeText('title', 4)->setLabel('Title'))
-            ->addColumn(JockoColumn::makeText('reference', 3)->setLabel('Ref'))
-            ->addColumn(JockoColumn::makeText('year', 3)->setLabel('Year'))
-            ->setIsSearchable()
-            ->setIsReorderable();
+            ->addColumn(JockoColumn::makeText('title', 4)->setLabel('Title'));
     }
 
     public static function configureJockoCollectionForm(JockoCollectionFormConfig $config): JockoCollectionFormConfig
     {
         return $config
             ->addCustomField(
-                JockoField::makeText('reference')
-                    ->setLabel('Ref')
-                    ->setValidationRules(['required'])
-            )
-            ->addCustomField(
-                JockoField::makeText('year')
-                    ->setLabel('Year')
-                    ->setValidationRules(['required', 'integer'])
-                    ->setHelpMessage('Year of the project')
-            )
-            ->addCustomField(
-                JockoField::makeImageList('visuals')
-                    ->setLabel('Visuals')
-                    ->setMaxItems(5)
+                JockoField::makeText('key')
+                    ->setIsUpdatable(false)
+                    ->setLabel('Key')
             );
     }
 }

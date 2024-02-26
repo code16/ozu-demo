@@ -10,7 +10,7 @@ class ContactPageController extends Controller
     public function __invoke()
     {
         return view('pages.contact', [
-            'page' => Page::firstWhere('key', 'contact')
+            'page' => Page::firstWhere('custom_properties.key', 'contact')
         ]);
     }
 }

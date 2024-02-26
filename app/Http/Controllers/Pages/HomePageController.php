@@ -10,7 +10,7 @@ class HomePageController extends Controller
     public function __invoke()
     {
         return view('pages.home', [
-            'projects' => Project::take(3)->get(),
+            'projects' => Project::take(2)->get(),
         ]);
     }
 }

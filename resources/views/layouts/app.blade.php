@@ -8,17 +8,24 @@
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 
+        <style>
+            [x-cloak] {
+                display: none !important;
+            }
+        </style>
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="antialiased font-sans">
-        <div class="flex min-h-screen">
+    <body class="bg-white text-black antialiased dark:bg-gray-950 dark:text-white">
+        <div class="flex flex-col min-h-screen">
             <x-header></x-header>
 
             <main class="flex-1">
-                {{ $slot }}
+                <x-container>
+                    {{ $slot }}
+                </x-container>
             </main>
 
             <x-footer></x-footer>

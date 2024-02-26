@@ -13,8 +13,6 @@ class PageFactory extends Factory
         return [
             'title' => fake()->sentence(),
             'content' => fake()->paragraph(),
-//                'reference' => fake()->numerify('##-###'),
-//                'year' => fake()->numberBetween(2000, 2024)
         ];
     }
 }

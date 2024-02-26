@@ -29,9 +29,9 @@ class Project extends JockoModel
             ->orderBy('order');
     }
 
-    public function url(): Attribute
+    protected function url(): Attribute
     {
-        return Attribute::make(function ($value) {
+        return Attribute::make(get: function () {
             return route('projects.show', $this);
         });
     }

@@ -10,7 +10,7 @@ class AboutPageController extends Controller
     public function __invoke()
     {
         return view('pages.about', [
-            'page' => Page::firstWhere('custom_properties.key', 'about')
+            'page' => Page::whereJsonContains('custom_properties->key', 'about')->first()
         ]);
     }
 }

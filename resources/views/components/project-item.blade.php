@@ -16,7 +16,7 @@
         <p class="prose mb-3 max-w-none text-gray-500 dark:text-gray-400">
             {{ $project->place }}, {{ $project->year }}
         </p>
-        <x-link href="{{ $project->url }}">
+        <x-link class="text-base font-medium leading-6" href="{{ $project->url }}">
             Learn more →
         </x-link>
     </div>

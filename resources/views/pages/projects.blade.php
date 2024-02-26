@@ -14,5 +14,9 @@
                 <x-project-item :project="$project"></x-project-item>
             @endforeach
         </div>
+
+        <div class="mt-8">
+            {{ $projects->links() }}
+        </div>
     </x-layout.default>
 </x-layout>

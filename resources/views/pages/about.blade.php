@@ -7,7 +7,9 @@
         </x-slot:title>
 
         <x-content>
-            {!! $page->content !!}
+            <x-jocko-content>
+                {!! $page->content !!}
+            </x-jocko-content>
         </x-content>
     </x-layout.default>
 </x-layout>

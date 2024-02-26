@@ -6,10 +6,10 @@
             {{ $title }}
         </h1>
         @if($subtitle ?? null)
-            <p class="text-lg leading-7 text-gray-500 dark:text-gray-400">{{ $subtitle }}</p>
+            <div class="text-lg leading-7 text-gray-500 dark:text-gray-400">{{ $subtitle }}</div>
         @endif
     </div>
-    <div class="container py-12">
+    <div class="container pt-12">
         {{ $slot }}
     </div>
 </div>

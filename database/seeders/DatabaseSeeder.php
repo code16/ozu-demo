@@ -24,13 +24,13 @@ class DatabaseSeeder extends JockoSeeder
         Page::factory()->create([
             'title' => 'Contact',
             'key' => 'contact',
-            'content' => '<p>Some content</p>',
+            'content' => "<p>We look forward to the opportunity to work with you and embark on a journey to elevate your online presence. Let's create something extraordinary together!</p>",
         ]);
 
         Page::factory()->create([
-            'title' => 'About us',
+            'title' => 'Meet the team',
             'key' => 'about',
-            'content' => '<p>Some content</p>',
+            'content' => collect(range(1, 4))->map(fn ($paragraph) => '<p>'.fake()->paragraph(5).'</p>')->implode(''),
         ]);
 
         Project::factory()

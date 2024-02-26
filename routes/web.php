@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', HomePageController::class)
     ->name('home');
 
-Route::get('/projects', [ProjectController::class, 'index'])
+Route::get('/projects/index/{page?}', [ProjectController::class, 'index'])
     ->name('projects.index');
 
 Route::get('/projects/{project}', [ProjectController::class, 'show'])

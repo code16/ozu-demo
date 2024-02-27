@@ -3,7 +3,7 @@
 <x-layout>
 
     <div class="relative flex items-center overflow-hidden p-12">
-        <img class="absolute inset-0 w-full h-full object-cover" src="{{ asset('/img/hero.avif') }}" role="presentation" alt="Jocko, an Ozu demo project">
+        <img class="absolute inset-0 w-full h-full object-cover" src="{{ asset('/img/hero.jpg') }}" role="presentation" alt="Jocko, an Ozu demo project">
         <div class="absolute inset-0 from-black/30 to-black/0  bg-gradient-to-r"></div>
         <div class="absolute inset-0 from-black/40 to-black/0  bg-gradient-to-r"></div>
         <div class="relative text-4xl sm:text-6xl xl:text-8xl uppercase font-bold text-white py-12">

@@ -47,9 +47,9 @@
 
         @if(count($project->visuals))
             <div class="mt-12">
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="grid sm:grid-cols-3 grid-cols-2 gap-4">
                     @foreach($project->visuals as $visual)
-                        <img class="aspect-square" src="{{ $visual->thumbnail(400, 400) }}" alt="">
+                        <img class="aspect-square" src="{{ $visual->thumbnail(400, fit: true) }}" alt="">
                     @endforeach
                 </div>
             </div>

@@ -52,9 +52,9 @@
             </a>
         </div>
         <div class="mb-2 flex space-x-2 text-sm text-gray-500 dark:text-gray-400">
-            <div>Jocko</div>
+            <div><a href="https://ozu.code16.fr">Made with Ozu</a></div>
             <div> •</div>
-            <div>© 2024</div>
+            <div>© {{ date('Y') }}</div>
             <div> •</div>
             <a href="/">Jocko demo</a>
         </div>

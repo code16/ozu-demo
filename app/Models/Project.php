@@ -41,7 +41,9 @@ class Project extends JockoModel
         return $config
             ->setLabel('Projects')
             ->setIcon('fa-ruler-combined')
-            ->setHasPublicationState();
+            ->setHasPublicationState()
+            ->setIsCreatable()
+            ->setIsDeletable(false);
     }
 
     public static function configureJockoCollectionList(JockoCollectionListConfig $config): JockoCollectionListConfig

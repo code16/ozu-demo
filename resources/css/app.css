@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities {
+    .font-sans {
+        font-optical-sizing: auto;
+        font-variation-settings: 'wdth' 100;
+    }
+}

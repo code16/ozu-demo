@@ -1,0 +1,16 @@
+<?php
+
+namespace App\Http\Controllers\Pages;
+
+use App\Http\Controllers\Controller;
+use App\Models\Page;
+
+class ContactPageController extends Controller
+{
+    public function __invoke()
+    {
+        return view('pages.contact', [
+            'page' => Page::whereJsonContains('custom_properties->key', 'contact')->first(),
+        ]);
+    }
+}

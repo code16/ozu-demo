@@ -33,7 +33,7 @@
                 @endforeach
             </div>
             <div class="text-center mt-8">
-                <x-link href="{{ route('projects.index') }}">
+                <x-link href="{{ route('projects.index', absolute: false) }}">
                     Browse projects...
                 </x-link>
             </div>

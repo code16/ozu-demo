@@ -14,13 +14,13 @@
             <div class="flex items-center space-x-4 leading-5 sm:space-x-6">
 {{--                <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="/blog">Blog</a>--}}
 {{--                <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="/tags">Tags</a>--}}
-                <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="{{ route('projects.index') }}">
+                <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="{{ route('projects.index', absolute: false) }}">
                     Projects
                 </a>
-                <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="{{ route('about') }}">
+                <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="{{ route('about', absolute: false) }}">
                     The team
                 </a>
-                <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="{{ route('contact') }}">
+                <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="{{ route('contact', absolute: false) }}">
                     Contact
                 </a>
 {{--                <button aria-label="Search">--}}

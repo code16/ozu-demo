@@ -3,8 +3,6 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
 
 class ProjectFactory extends Factory
 {
@@ -12,7 +10,9 @@ class ProjectFactory extends Factory
     {
         return [
             'title' => fake()->sentence(),
-            'content' => fake()->paragraph(),
+            'content' => collect(range(3, 7))
+                ->map(fn ($paragraph) => '<p>'.fake()->paragraph(5).'</p>')
+                ->implode(''),
 //                'reference' => fake()->numerify('##-###'),
 //                'year' => fake()->numberBetween(2000, 2024)
         ];

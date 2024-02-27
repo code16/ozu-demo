@@ -40,7 +40,6 @@ class Page extends JockoModel
         return $config
             ->addCustomField(
                 JockoField::makeText('key')
-                    ->setIsUpdatable(false)
                     ->setLabel('Key')
             );
     }

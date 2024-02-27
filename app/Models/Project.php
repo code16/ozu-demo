@@ -32,7 +32,7 @@ class Project extends JockoModel
     protected function url(): Attribute
     {
         return Attribute::make(get: function () {
-            return route('projects.show', $this);
+            return route('projects.show', $this, absolute: false);
         });
     }
 

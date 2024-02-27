@@ -61,7 +61,7 @@ class Project extends JockoModel
     {
         return $config
             ->addCustomField(
-                JockoField::makeText('Place')
+                JockoField::makeText('place')
                     ->setLabel('Place')
                     ->setValidationRules(['required'])
             )

@@ -7,28 +7,46 @@
         <div class="absolute inset-0 from-black/30 to-black/0  bg-gradient-to-r"></div>
         <div class="absolute inset-0 from-black/40 to-black/0  bg-gradient-to-r"></div>
         <div class="relative text-4xl sm:text-6xl xl:text-8xl uppercase font-bold text-white py-12">
-            The best<br><em>Whatever</em><br>in town
+            The best<br>Monkey<br>in town
         </div>
     </div>
 
     <x-section class="mt-24 mb-24 px-12">
         <div class="grid sm:grid-cols-2 gap-4">
-            <x-kpi icon="plane">
+            <x-kpi>
+                <x-slot:icon>
+                    <x-icon-monkey-1 class="w-6 h-6"></x-icon-monkey-1>
+                </x-slot:icon>
                 We get stuff done
             </x-kpi>
-            <x-kpi icon="lock">
+            <x-kpi>
+                <x-slot:icon>
+                    <x-icon-monkey-2 class="w-6 h-6"></x-icon-monkey-2>
+                </x-slot:icon>
                 We can go on forever
             </x-kpi>
-            <x-kpi icon="heart">
+            <x-kpi>
+                <x-slot:icon>
+                    <x-icon-monkey-3 class="w-6 h-6"></x-icon-monkey-3>
+                </x-slot:icon>
                 And we do this also
             </x-kpi>
-            <x-kpi icon="new">
+            <x-kpi>
+                <x-slot:icon>
+                    <x-icon-monkey-4 class="w-6 h-6"></x-icon-monkey-4>
+                </x-slot:icon>
                 This is not the last item
             </x-kpi>
-            <x-kpi icon="star">
+            <x-kpi>
+                <x-slot:icon>
+                    <x-icon-monkey-5 class="w-6 h-6"></x-icon-monkey-5>
+                </x-slot:icon>
                 And even this
             </x-kpi>
-            <x-kpi icon="user">
+            <x-kpi>
+                <x-slot:icon>
+                    <x-icon-monkey-7 class="w-6 h-6"></x-icon-monkey-7>
+                </x-slot:icon>
                 Ok I think we are done
             </x-kpi>
         </div>

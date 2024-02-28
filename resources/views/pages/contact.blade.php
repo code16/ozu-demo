@@ -12,30 +12,10 @@
 
         <form
             class="max-w-md"
-            action="https://formspree.io/f/xjvnrrbb"
+            action="/"
             method="POST"
-            x-data="{ success: false, failure: false, errors: null }"
-            @submit.prevent="
-                success = false;
-                errors = null;
-                try {
-                    const response = await fetch($el.action, {
-                        method: $el.method,
-                        body: new FormData($el),
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    });
-                    if (response.ok) {
-                        success = true;
-                        $el.reset();
-                    } else {
-                        errors = await response.json().errors;
-                    }
-                } catch(e) {
-                    failure = true;
-                }
-            "
+            x-data="{ success: false, errors: null }"
+            @submit.prevent="success = true; $el.reset();"
         >
             <div x-cloak x-show="success" class="bg-green-400 p-2 mb-4">
                 Thanks for your submission!
@@ -48,14 +28,14 @@
             <div class="space-y-4">
                 <div>
                     <label class="block mb-1">
-                        Email
+                        Your email
                     </label>
                     <input class="w-full border-gray-400 rounded" type="email" name="email" required>
                     <div class="text-red-700 text-sm" x-show="errors?.email" x-text="errors?.email"></div>
                 </div>
                 <div>
                     <label class="block mb-1">
-                        Message
+                        Your message
                     </label>
                     <textarea class="w-full border-gray-400 rounded" name="message" required></textarea>
                     <div class="text-red-700 text-sm" x-show="errors?.message" x-text="errors?.message"></div>

@@ -41,7 +41,8 @@ class DatabaseSeeder extends JockoSeeder
             ->count(12)
             ->has(Media::factory()->image('cover')->withFile(), 'cover')
             ->has(Media::factory()->image('visuals')->withFile()->count(3), 'visuals')
-            ->sequence(fn () => [
+            ->sequence(fn ($sequence) => [
+                'order' => $sequence->index + 1,
                 'year' => fake()->numberBetween(2000, date('Y')),
                 'place' => fake()->city,
             ])

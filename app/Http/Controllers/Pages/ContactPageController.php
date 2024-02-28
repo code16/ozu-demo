@@ -10,7 +10,9 @@ class ContactPageController extends Controller
     public function __invoke()
     {
         return view('pages.contact', [
-            'page' => Page::whereJsonContains('custom_properties->key', 'contact')->first(),
+            'page' => Page::query()
+                ->whereJsonContains('custom_properties->key', 'contact')
+                ->firstOrFail(),
         ]);
     }
 }

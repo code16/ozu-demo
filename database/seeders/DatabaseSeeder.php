@@ -45,6 +45,7 @@ class DatabaseSeeder extends JockoSeeder
                 'order' => $sequence->index + 1,
                 'year' => fake()->numberBetween(2000, date('Y')),
                 'place' => fake()->city,
+                'date' => fake()->date,
             ])
             ->create();
     }

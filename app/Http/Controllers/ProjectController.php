@@ -9,7 +9,7 @@ class ProjectController extends Controller
     public function index()
     {
         return view('pages.projects', [
-            'projects' => Project::simplePaginate(4, page: request()->route()->parameter('page')),
+            'projects' => Project::simplePaginate(4),
         ]);
     }
 

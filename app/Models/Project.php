@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Code16\JockoClient\JockoCms\List\JockoColumn;
+use Illuminate\Database\Eloquent\Relations\MorphOne;
 
 class Project extends JockoModel
 {
@@ -27,6 +28,12 @@ class Project extends JockoModel
         return $this->morphMany(Media::class, 'model')
             ->where('model_key', 'visuals')
             ->orderBy('order');
+    }
+
+    public function thumb(): MorphOne
+    {
+        return $this->morphOne(Media::class, 'model')
+            ->where('model_key', 'thumb');
     }
 
     protected function url(): Attribute
@@ -70,6 +77,11 @@ class Project extends JockoModel
                     ->setLabel('Year')
                     ->setValidationRules(['required', 'integer'])
                     ->setHelpMessage('Year of the project')
+            )
+            ->addCustomField(
+                JockoField::makeImage('thumb')
+                    ->setLabel('Thumbnail')
+                    ->setHelpMessage('Optional, cover will be used by default.')
             )
             ->addCustomField(
                 JockoField::makeImageList('visuals')

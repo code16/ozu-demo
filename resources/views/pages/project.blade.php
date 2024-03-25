@@ -41,9 +41,16 @@
             </div>
         </x-slot:aside>
 
-        <x-content>
-            {!! $project->content !!}
-        </x-content>
+        {!! $project->content !!}
+
+{{--        <x-content>--}}
+{{--            <x-jocko-content--}}
+{{--                :image-thumbnail-width="600"--}}
+{{--                :image-thumbnail-height="400"--}}
+{{--            >--}}
+{{--                {!! $project->content !!}--}}
+{{--            </x-jocko-content>--}}
+{{--        </x-content>--}}
 
         @if(count($project->visuals))
             <div class="mt-12">

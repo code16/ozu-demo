@@ -282,16 +282,16 @@
         },
         {
             "name": "code16/ozu-client",
-            "version": "v0.4.0",
+            "version": "v0.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/code16/ozu-client.git",
-                "reference": "8d4fe5b64f162923d1c7d775fa338da213ce519e"
+                "reference": "e272998fd9650b0c64b4b7cc1cce18c79e3abe3a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/code16/ozu-client/zipball/8d4fe5b64f162923d1c7d775fa338da213ce519e",
-                "reference": "8d4fe5b64f162923d1c7d775fa338da213ce519e",
+                "url": "https://api.github.com/repos/code16/ozu-client/zipball/e272998fd9650b0c64b4b7cc1cce18c79e3abe3a",
+                "reference": "e272998fd9650b0c64b4b7cc1cce18c79e3abe3a",
                 "shasum": ""
             },
             "require": {
@@ -309,6 +309,7 @@
                 "pestphp/pest": "^2.0",
                 "pestphp/pest-plugin-arch": "^2.0",
                 "pestphp/pest-plugin-laravel": "^2.0",
+                "spatie/laravel-export": "^1.1",
                 "spatie/laravel-ray": "^1.26"
             },
             "type": "library",
@@ -370,9 +371,9 @@
                 "ozu-client"
             ],
             "support": {
-                "source": "https://github.com/code16/ozu-client/tree/v0.4.0"
+                "source": "https://github.com/code16/ozu-client/tree/v0.4.1"
             },
-            "time": "2024-07-15T09:30:30+00:00"
+            "time": "2024-09-10T09:36:47+00:00"
         },
         {
             "name": "dflydev/dot-access-data",

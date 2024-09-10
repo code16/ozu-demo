@@ -11,7 +11,7 @@ class ContactPageController extends Controller
     {
         return view('pages.contact', [
             'page' => Page::query()
-                ->whereJsonContains('custom_properties->key', 'contact')
+                ->where('key','contact')
                 ->firstOrFail(),
         ]);
     }

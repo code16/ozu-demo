@@ -11,9 +11,7 @@
         @endif
 
         <x-content>
-            <x-jocko-content>
-                {!! $page->content !!}
-            </x-jocko-content>
+            {!! $page->content !!}
         </x-content>
     </x-layout.default>
 </x-layout>

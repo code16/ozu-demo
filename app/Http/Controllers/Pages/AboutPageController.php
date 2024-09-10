@@ -11,7 +11,7 @@ class AboutPageController extends Controller
     {
         return view('pages.about', [
             'page' => Page::query()
-                ->whereJsonContains('custom_properties->key', 'about')
+                ->where('key', 'about')
                 ->firstOrFail()
         ]);
     }

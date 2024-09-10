@@ -4,7 +4,7 @@
             <div>
                 <a aria-label="TailwindBlog" href="/">
                     <div class="flex items-center justify-between">
-                        <x-icon-logo class="h-12 w-12 text-gray-900 dark:text-gray-100" alt="Ozu" />
+                        <x-icon-logo class="h-32 w-32 text-gray-900 dark:text-gray-100" alt="Ozu" />
                     </div>
                 </a>
             </div>

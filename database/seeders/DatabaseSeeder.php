@@ -4,10 +4,10 @@ namespace Database\Seeders;
 
 use App\Models\Page;
 use App\Models\Project;
-use Code16\JockoClient\Eloquent\Media;
-use Code16\JockoClient\Support\Database\JockoSeeder;
+use Code16\OzuClient\Eloquent\Media;
+use Code16\OzuClient\Support\Database\OzuSeeder;
 
-class DatabaseSeeder extends JockoSeeder
+class DatabaseSeeder extends OzuSeeder
 {
     /**
      * Seed the application's database.
@@ -45,7 +45,6 @@ class DatabaseSeeder extends JockoSeeder
                 'order' => $sequence->index + 1,
                 'year' => fake()->numberBetween(2000, date('Y')),
                 'place' => fake()->city,
-                'date' => fake()->date,
             ])
             ->create();
     }

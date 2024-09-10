@@ -1,13 +1,6 @@
 <footer>
     <div class="mt-24 flex flex-col items-center mb-12">
         <div class="mb-3 flex space-x-4">
-{{--            <a class="text-sm text-gray-500 transition hover:text-gray-600" target="_blank" rel="noopener noreferrer" href="mailto:address@yoursite.com">--}}
-{{--                <span class="sr-only">mail</span>--}}
-{{--                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="fill-current text-gray-700 hover:text-primary-500 dark:text-gray-200 dark:hover:text-primary-400 h-6 w-6">--}}
-{{--                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>--}}
-{{--                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>--}}
-{{--                </svg>--}}
-{{--            </a>--}}
             <a class="text-sm text-gray-500 transition hover:text-gray-600" target="_blank" rel="noopener noreferrer" href="https://github.com">
                 <span class="sr-only">github</span>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="fill-current text-gray-700 hover:text-primary-500 dark:text-gray-200 dark:hover:text-primary-400 h-6 w-6">
@@ -56,7 +49,7 @@
             <div> •</div>
             <div>© {{ date('Y') }}</div>
             <div> •</div>
-            <a href="/">Jocko demo</a>
+            <a href="/">{{config('app.name')}} demo</a>
         </div>
     </div>
 </footer>

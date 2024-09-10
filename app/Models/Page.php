@@ -2,25 +2,23 @@
 
 namespace App\Models;
 
-use Code16\JockoClient\Eloquent\JockoModel;
-use Code16\JockoClient\Eloquent\Media;
-use Code16\JockoClient\JockoCms\Form\JockoField;
-use Code16\JockoClient\JockoCms\JockoCollectionFormConfig;
-use Code16\JockoClient\JockoCms\JockoCollectionListConfig;
-use Code16\JockoClient\JockoCms\JockoCollectionConfig;
+use Code16\OzuClient\Eloquent\IsOzuModel;
+use Code16\OzuClient\OzuCms\Form\OzuEditorField;
+use Code16\OzuClient\OzuCms\Form\OzuEditorToolbarEnum;
+use Code16\OzuClient\OzuCms\Form\OzuField;
+use Code16\OzuClient\OzuCms\List\OzuColumn;
+use Code16\OzuClient\OzuCms\OzuCollectionConfig;
+use Code16\OzuClient\OzuCms\OzuCollectionFormConfig;
+use Code16\OzuClient\OzuCms\OzuCollectionListConfig;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\MorphMany;
-use Code16\JockoClient\JockoCms\List\JockoColumn;
+use Illuminate\Database\Eloquent\Model;
 
-class Page extends JockoModel
+class Page extends Model
 {
     use HasFactory;
+    use IsOzuModel;
 
-    protected array $jockoCustomAttributes = [
-        'key',
-    ];
-
-    public static function configureJockoCollection(JockoCollectionConfig $config): JockoCollectionConfig
+    public static function configureOzuCollection(OzuCollectionConfig $config): OzuCollectionConfig
     {
         return $config
             ->setLabel('Pages')
@@ -28,18 +26,32 @@ class Page extends JockoModel
             ->setHasPublicationState();
     }
 
-    public static function configureJockoCollectionList(JockoCollectionListConfig $config): JockoCollectionListConfig
+    public static function configureOzuCollectionList(OzuCollectionListConfig $config): OzuCollectionListConfig
     {
         return $config
-            ->addColumn(JockoColumn::makeImage('cover', 1))
-            ->addColumn(JockoColumn::makeText('title', 4)->setLabel('Title'));
+            ->addColumn(OzuColumn::makeImage('cover', 1))
+            ->addColumn(OzuColumn::makeText('title', 4)->setLabel('Title'));
     }
 
-    public static function configureJockoCollectionForm(JockoCollectionFormConfig $config): JockoCollectionFormConfig
+    public static function configureOzuCollectionForm(OzuCollectionFormConfig $config): OzuCollectionFormConfig
     {
         return $config
+            ->configureContentField(fn(OzuEditorField $field) => $field
+                ->setLabel('Content')
+                ->setToolbar([
+                    OzuEditorToolbarEnum::Heading1,
+                    OzuEditorToolbarEnum::Heading2,
+                    OzuEditorToolbarEnum::Separator,
+                    OzuEditorToolbarEnum::Bold,
+                    OzuEditorToolbarEnum::Italic,
+                    OzuEditorToolbarEnum::Link,
+                    OzuEditorToolbarEnum::Separator,
+                    OzuEditorToolbarEnum::BulletList,
+                    OzuEditorToolbarEnum::OrderedList,
+                ])
+            )
             ->addCustomField(
-                JockoField::makeText('key')
+                OzuField::makeText('key')
                     ->setLabel('Key')
             );
     }

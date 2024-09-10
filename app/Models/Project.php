@@ -2,26 +2,23 @@
 
 namespace App\Models;
 
-use Code16\JockoClient\Eloquent\JockoModel;
-use Code16\JockoClient\Eloquent\Media;
-use Code16\JockoClient\JockoCms\Form\JockoField;
-use Code16\JockoClient\JockoCms\JockoCollectionFormConfig;
-use Code16\JockoClient\JockoCms\JockoCollectionListConfig;
-use Code16\JockoClient\JockoCms\JockoCollectionConfig;
+use Code16\OzuClient\Eloquent\IsOzuModel;
+use Code16\OzuClient\Eloquent\Media;
+use Code16\OzuClient\OzuCms\Form\OzuField;
+use Code16\OzuClient\OzuCms\List\OzuColumn;
+use Code16\OzuClient\OzuCms\OzuCollectionConfig;
+use Code16\OzuClient\OzuCms\OzuCollectionFormConfig;
+use Code16\OzuClient\OzuCms\OzuCollectionListConfig;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
-use Code16\JockoClient\JockoCms\List\JockoColumn;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 
-class Project extends JockoModel
+class Project extends Model
 {
     use HasFactory;
-
-    protected array $jockoCustomAttributes = [
-        'place',
-        'year',
-    ];
+    use IsOzuModel;
 
     public function visuals(): MorphMany
     {
@@ -43,7 +40,7 @@ class Project extends JockoModel
         });
     }
 
-    public static function configureJockoCollection(JockoCollectionConfig $config): JockoCollectionConfig
+    public static function configureOzuCollection(OzuCollectionConfig $config): OzuCollectionConfig
     {
         return $config
             ->setLabel('Projects')
@@ -53,38 +50,38 @@ class Project extends JockoModel
             ->setIsDeletable(false);
     }
 
-    public static function configureJockoCollectionList(JockoCollectionListConfig $config): JockoCollectionListConfig
+    public static function configureOzuCollectionList(OzuCollectionListConfig $config): OzuCollectionListConfig
     {
         return $config
-            ->addColumn(JockoColumn::makeImage('cover', 1))
-            ->addColumn(JockoColumn::makeText('title', 4)->setLabel('Title'))
-            ->addColumn(JockoColumn::makeText('place', 3)->setLabel('Place'))
-            ->addColumn(JockoColumn::makeText('year', 3)->setLabel('Year'))
+            ->addColumn(OzuColumn::makeImage('cover', 1))
+            ->addColumn(OzuColumn::makeText('title', 4)->setLabel('Title'))
+            ->addColumn(OzuColumn::makeText('place', 3)->setLabel('Place'))
+            ->addColumn(OzuColumn::makeText('year', 3)->setLabel('Year'))
             ->setIsSearchable()
             ->setIsReorderable();
     }
 
-    public static function configureJockoCollectionForm(JockoCollectionFormConfig $config): JockoCollectionFormConfig
+    public static function configureOzuCollectionForm(OzuCollectionFormConfig $config): OzuCollectionFormConfig
     {
         return $config
             ->addCustomField(
-                JockoField::makeText('place')
+                OzuField::makeText('place')
                     ->setLabel('Place')
                     ->setValidationRules(['required'])
             )
             ->addCustomField(
-                JockoField::makeText('year')
+                OzuField::makeText('year')
                     ->setLabel('Year')
                     ->setValidationRules(['required', 'integer'])
                     ->setHelpMessage('Year of the project')
             )
             ->addCustomField(
-                JockoField::makeImage('thumb')
+                OzuField::makeImage('thumb')
                     ->setLabel('Thumbnail')
                     ->setHelpMessage('Optional, cover will be used by default.')
             )
             ->addCustomField(
-                JockoField::makeImageList('visuals')
+                OzuField::makeImageList('visuals')
                     ->setLabel('Visuals')
                     ->setMaxItems(5)
             );

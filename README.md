@@ -8,15 +8,14 @@ This repository is a demonstration project showcasing how to build a static site
 
 * [Features](#features)
 * [Prerequisites](#prerequisites)
-* [Installation & Setup](#installation--setup)
+* [Try Ozu with this project](#try-ozu-with-this-project)
 * [Usage](#usage)
 
     * [Configure CMS](#configure-cms)
     * [Local Development](#local-development)
     * [Build Static Site](#build-static-site)
 * [Deployment](#deployment)
-* [Technologies](#technologies)
-* [License](#license)
+* [Technologies](#technologies-used-in-this-demo-project)
 
 ---
 

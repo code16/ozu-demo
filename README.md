@@ -1,66 +1,135 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Ozu Demo Project
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This repository is a demonstration project showcasing how to build a static site with dynamic content using the [Ozu client](https://github.com/code16/ozu-client) for Laravel. Explore the live demo at: [https://demo.ozu.code16.fr](https://demo.ozu.code16.fr)
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Table of Contents
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+* [Features](#features)
+* [Prerequisites](#prerequisites)
+* [Installation & Setup](#installation--setup)
+* [Usage](#usage)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+    * [Configure CMS](#configure-cms)
+    * [Local Development](#local-development)
+    * [Build Static Site](#build-static-site)
+* [Deployment](#deployment)
+* [Technologies](#technologies)
+* [License](#license)
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Features
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+* **Dynamic Content** powered by Ozu, a content managment platform leveraging our open-source  Laravel CMS ([Sharp](https://github.com/code16/sharp)) integrated via the [ozu-client package](https://github.com/code16/ozu-client)
+* **Static Site Generation** is **fully handled** by Ozu for fast, secure, and cache-friendly delivery
+* **Come as you are**: use your back and frontend stacks to develop static
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## Prerequisites
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+* PHP 8.3+
+* An Ozu account (beta access, feel free to contact us, we're looking for beta testers)
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## Try Ozu with this project
 
-## Contributing
+1. **Clone the repository**
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+   ```bash
+   git clone https://github.com/dvlpp/ozu-demo.git
+   cd ozu-demo
+   ```
 
-## Code of Conduct
+2. **Install PHP dependencies**
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+   ```bash
+   composer install
+   ```
 
-## Security Vulnerabilities
+3. **Install frontend dependencies**
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+   ```bash
+   npm install
+   ```
 
-## License
+4. **Environment configuration**
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
+
+5. **Configure Ozu credentials** in your `.env`:
+
+   ```dotenv
+   OZU_API_KEY=your_api_key
+   OZU_WEBSITE_KEY=your_website_key
+   OZU_API_HOST=https://ozu.code16.fr/
+   ```
+
+---
+
+## Usage
+
+### Configure CMS
+
+Publish and edit the Ozu configuration:
+
+```bash
+php artisan vendor:publish --tag="ozu-client-config"
+# edit config/ozu-client.php and declare your models under 'collections'
+php artisan ozu:configure-cms
+```
+
+### Local Development
+
+Run the built-in server for frontend development:
+
+```bash
+composer run dev
+```
+
+### Build Static Site
+
+Ozu has a custom (not-open) builder that relies on [spatie/laravel-export](https://github.com/spatie/laravel-export)
+To try to build locally this project, you can run:
+
+```bash
+composer require spatie/laravel-export
+php artisan export
+```
+
+Static files will be output to the `public/` directory, ready for deployment.
+
+> [!INFO]
+> Keep in mind that there may be small differences between this build method and the Ozu final render.
+
+> [!WARNING]
+> To preview your now rendered static site, remember that you'll have to configure a webserver/virtual host to serve your export so that it'll appear correctly on your browser.
+> Opening your export files directly in your browser will not work correctly.
+
+---
+
+## Deployment
+
+1. **Connect your GitHub repo** via the Ozu dashboard.
+2. **Install the Ozu GitHub App** and grant read-only access.
+3. **Provision a Netlify site** or your own VPS via an SSH access.
+4. **Add content to your website** from Ozu's CMS.
+5. **Trigger a deploy** from the Ozu dashboard.
+
+> See [Ozu](https://ozu.code16.fr) for more details.
+
+---
+
+## Technologies used in this demo project
+
+* **Laravel** (PHP Framework)
+* **[ozu-client](https://github.com/code16/ozu-client)** (Ozu integration package) 
+* **Tailwind CSS**
+* **Vite**
+* **Alpine.js**

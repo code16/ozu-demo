@@ -27,7 +27,7 @@ class DatabaseSeeder extends OzuSeeder
             'content' => "<p>We look forward to the opportunity to work with you and embark on a journey to elevate your online presence. Let's create something extraordinary together!</p>",
         ]);
 
-        Page::factory()
+        $aboutPage = Page::factory()
             ->has(Media::factory()->image('cover')->withFile(), 'cover')
             ->create([
                 'title' => 'Meet the team',
@@ -36,6 +36,9 @@ class DatabaseSeeder extends OzuSeeder
                     ->map(fn ($paragraph) => '<p>'.fake()->paragraph(5).'</p>')
                     ->implode(''),
             ]);
+
+        $this->seedVideoEmbed($aboutPage, 'content', 'https://www.youtube.com/watch?v=ZBYZHeB67O4');
+        $this->seedQuoteEmbed($aboutPage, "content", "We're building a new way to create websites without the hassle of overcomplicating things.", "Code16.");
 
         Project::factory()
             ->count(12)

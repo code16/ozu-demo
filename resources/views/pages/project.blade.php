@@ -41,16 +41,12 @@
             </div>
         </x-slot:aside>
 
-        {!! $project->content !!}
-
-{{--        <x-content>--}}
-{{--            <x-jocko-content--}}
-{{--                :image-thumbnail-width="600"--}}
-{{--                :image-thumbnail-height="400"--}}
-{{--            >--}}
-{{--                {!! $project->content !!}--}}
-{{--            </x-jocko-content>--}}
-{{--        </x-content>--}}
+        <x-ozu-content>
+            <!-- Here: we encapsulate dynamic content inputted from the Ozu CMS to allow it to render correctly (such as editor embeds like videos, quotes, images...) -->
+            <div class="space-y-2 my-2 pb-8 pt-10">
+                {!! $project->content !!}
+            </div>
+        </x-ozu-content>
 
         @if(count($project->visuals))
             <div class="mt-12">

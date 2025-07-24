@@ -46,6 +46,10 @@ class Page extends Model
                     OzuEditorToolbarEnum::Italic,
                     OzuEditorToolbarEnum::Link,
                     OzuEditorToolbarEnum::Separator,
+                    OzuEditorToolbarEnum::Video,
+                    OzuEditorToolbarEnum::Image,
+                    OzuEditorToolbarEnum::Quote,
+                    OzuEditorToolbarEnum::Separator,
                     OzuEditorToolbarEnum::BulletList,
                     OzuEditorToolbarEnum::OrderedList,
                 ])

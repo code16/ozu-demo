@@ -7,10 +7,10 @@
 
 <div class="h-full  overflow-hidden rounded-md border-2 border-gray-200 border-opacity-60 dark:border-gray-700">
     <a href="{{ $project->url }}" >
-        <img class="object-cover object-center md:h-36 lg:h-48 w-full" src="{{ $projectThumb?->thumbnail(500) }}" alt="{{ $project->title }}">
+        <img class="object-cover object-center aspect-video my-0 w-full" src="{{ $projectThumb?->thumbnail(500) }}" alt="{{ $project->title }}">
     </a>
-    <div class="p-6">
-        <h2 class="mb-3 text-2xl font-bold leading-8 tracking-tight">
+    <div class="p-6 pt-0">
+        <h2 class="mb-3 mt-4 text-2xl font-bold leading-8 tracking-tight">
             <a href="{{ $project->url }}">
                 {{ $project->title }}
             </a>

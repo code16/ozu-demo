@@ -7,11 +7,14 @@
         <div class="absolute inset-0 from-black/30 to-black/0  bg-gradient-to-r"></div>
         <div class="absolute inset-0 from-black/40 to-black/0  bg-gradient-to-r"></div>
         <div class="relative text-4xl sm:text-6xl xl:text-8xl uppercase font-bold text-white py-12">
+            <div class="text-sm normal-case mb-1 z-20">
+                <p><a href="https://code16.fr">Code16</a> presents to you...</p>
+            </div>
             The best<br>Monkey<br>in town
         </div>
     </div>
 
-    <x-section class="mt-24 mb-24 px-12">
+    <x-section class="mt-20 mb-24 px-12">
         <div class="grid sm:grid-cols-2 gap-4">
             <x-kpi>
                 <x-slot:icon>

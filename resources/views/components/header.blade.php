@@ -19,7 +19,7 @@
                     Contact
                 </a>
                 <button aria-label="Toggle Dark Mode"
-                    x-data="{ theme: localStorage.getItem('theme') ?? 'light' }"
+                    x-data="{ theme: localStorage.getItem('theme') || 'light' }"
                     x-effect="() => {
                         localStorage.setItem('theme', theme);
                         document.documentElement.classList.toggle('light', theme === 'light');

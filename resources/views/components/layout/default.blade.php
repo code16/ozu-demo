@@ -10,6 +10,8 @@
         @endif
     </div>
     <div class="container pt-12">
-        {{ $slot }}
+        <div class="prose max-w-none dark:prose-invert">
+            {{ $slot }}
+        </div>
     </div>
 </div>

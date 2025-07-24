@@ -72,44 +72,13 @@ This repository is a demonstration project showcasing how to build a static site
 
 ---
 
-## Usage
-
-### Configure CMS
-
-Publish and edit the Ozu configuration:
-
-```bash
-php artisan vendor:publish --tag="ozu-client-config"
-# edit config/ozu-client.php and declare your models under 'collections'
-php artisan ozu:configure-cms
-```
-
-### Local Development
+## Local Development
 
 Run the built-in server for frontend development:
 
 ```bash
 composer run dev
 ```
-
-### Build Static Site
-
-Ozu has a custom (not-open) builder that relies on [spatie/laravel-export](https://github.com/spatie/laravel-export)
-To try to build locally this project, you can run:
-
-```bash
-composer require spatie/laravel-export
-php artisan export
-```
-
-Static files will be output to the `public/` directory, ready for deployment.
-
-> [!INFO]
-> Keep in mind that there may be small differences between this build method and the Ozu final render.
-
-> [!WARNING]
-> To preview your now rendered static site, remember that you'll have to configure a webserver/virtual host to serve your export so that it'll appear correctly on your browser.
-> Opening your export files directly in your browser will not work correctly.
 
 ---
 

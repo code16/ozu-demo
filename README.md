@@ -9,11 +9,7 @@ This repository is a demonstration project showcasing how to build a static site
 * [Features](#features)
 * [Prerequisites](#prerequisites)
 * [Try Ozu with this project](#try-ozu-with-this-project)
-* [Usage](#usage)
-
-    * [Configure CMS](#configure-cms)
-    * [Local Development](#local-development)
-    * [Build Static Site](#build-static-site)
+* [Local Development](#local-development)
 * [Deployment](#deployment)
 * [Technologies](#technologies-used-in-this-demo-project)
 

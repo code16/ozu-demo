@@ -37,6 +37,7 @@ class DatabaseSeeder extends OzuSeeder
                     ->implode(''),
             ]);
 
+        $this->seedImageEmbed($aboutPage, 'content');
         $this->seedVideoEmbed($aboutPage, 'content', 'https://www.youtube.com/watch?v=ZBYZHeB67O4');
         $this->seedQuoteEmbed($aboutPage, 'content', "We're building a new way to create websites without the hassle of overcomplicating things.", 'Code16.');
 

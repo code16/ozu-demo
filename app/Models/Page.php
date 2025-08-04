@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Code16\OzuClient\Eloquent\IsOzuModel;
 use Code16\OzuClient\OzuCms\Form\OzuEditorField;
-use Code16\OzuClient\OzuCms\Form\OzuEditorToolbarEnum;
+use Code16\OzuClient\OzuCms\Form\OzuEditorToolbarButton;
 use Code16\OzuClient\OzuCms\Form\OzuField;
 use Code16\OzuClient\OzuCms\List\OzuColumn;
 use Code16\OzuClient\OzuCms\OzuCollectionConfig;
@@ -39,19 +39,19 @@ class Page extends Model
             ->configureContentField(fn (OzuEditorField $field) => $field
                 ->setLabel('Content')
                 ->setToolbar([
-                    OzuEditorToolbarEnum::Heading1,
-                    OzuEditorToolbarEnum::Heading2,
-                    OzuEditorToolbarEnum::Separator,
-                    OzuEditorToolbarEnum::Bold,
-                    OzuEditorToolbarEnum::Italic,
-                    OzuEditorToolbarEnum::Link,
-                    OzuEditorToolbarEnum::Separator,
-                    OzuEditorToolbarEnum::Video,
-                    OzuEditorToolbarEnum::Image,
-                    OzuEditorToolbarEnum::Quote,
-                    OzuEditorToolbarEnum::Separator,
-                    OzuEditorToolbarEnum::BulletList,
-                    OzuEditorToolbarEnum::OrderedList,
+                    OzuEditorToolbarButton::Heading1,
+                    OzuEditorToolbarButton::Heading2,
+                    OzuEditorToolbarButton::Separator,
+                    OzuEditorToolbarButton::Bold,
+                    OzuEditorToolbarButton::Italic,
+                    OzuEditorToolbarButton::Link,
+                    OzuEditorToolbarButton::Separator,
+                    OzuEditorToolbarButton::Video,
+                    OzuEditorToolbarButton::Image,
+                    OzuEditorToolbarButton::Quote,
+                    OzuEditorToolbarButton::Separator,
+                    OzuEditorToolbarButton::BulletList,
+                    OzuEditorToolbarButton::OrderedList,
                 ])
             )
             ->addCustomField(

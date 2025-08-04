@@ -342,16 +342,16 @@
         },
         {
             "name": "code16/ozu-client",
-            "version": "v0.4.7",
+            "version": "v0.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/code16/ozu-client.git",
-                "reference": "9f5338d6d67d0cbbd901c55a791aa4a739256428"
+                "reference": "24e9686754cd20fb027fd6126cb4e41e39bfccf6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/code16/ozu-client/zipball/9f5338d6d67d0cbbd901c55a791aa4a739256428",
-                "reference": "9f5338d6d67d0cbbd901c55a791aa4a739256428",
+                "url": "https://api.github.com/repos/code16/ozu-client/zipball/24e9686754cd20fb027fd6126cb4e41e39bfccf6",
+                "reference": "24e9686754cd20fb027fd6126cb4e41e39bfccf6",
                 "shasum": ""
             },
             "require": {
@@ -365,6 +365,7 @@
                 "spatie/laravel-sluggable": "^3.6"
             },
             "require-dev": {
+                "code16/pint-config": "^1.2",
                 "laravel/pint": "^1.0",
                 "nunomaduro/collision": "^8.0",
                 "orchestra/testbench": "^9.0|^10.0",
@@ -394,7 +395,8 @@
             },
             "scripts": {
                 "post-autoload-dump": [
-                    "@php ./vendor/bin/testbench package:discover --ansi"
+                    "@php ./vendor/bin/testbench package:discover --ansi",
+                    "@php ./vendor/bin/pint-config install"
                 ],
                 "analyse": [
                     "vendor/bin/phpstan analyse"
@@ -432,9 +434,10 @@
                 "ozu-client"
             ],
             "support": {
-                "source": "https://github.com/code16/ozu-client/tree/v0.4.7"
+                "source": "https://github.com/code16/ozu-client/tree/v0.4.8",
+                "issues": "https://github.com/code16/ozu-client/issues"
             },
-            "time": "2025-07-24T11:59:56+00:00"
+            "time": "2025-08-04T16:07:49+00:00"
         },
         {
             "name": "code16/pint-config",

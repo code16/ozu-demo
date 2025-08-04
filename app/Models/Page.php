@@ -36,7 +36,7 @@ class Page extends Model
     public static function configureOzuCollectionForm(OzuCollectionFormConfig $config): OzuCollectionFormConfig
     {
         return $config
-            ->configureContentField(fn(OzuEditorField $field) => $field
+            ->configureContentField(fn (OzuEditorField $field) => $field
                 ->setLabel('Content')
                 ->setToolbar([
                     OzuEditorToolbarEnum::Heading1,

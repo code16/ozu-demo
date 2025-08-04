@@ -26,7 +26,7 @@ class ProjectController extends Controller
                 ->where('id', '!=', $project->id)
                 ->orderBy('order', 'asc')
                 ->orderBy('id', 'asc')
-                ->first()
+                ->first(),
         ]);
     }
 }

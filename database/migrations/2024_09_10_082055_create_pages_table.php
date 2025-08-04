@@ -11,11 +11,10 @@ return new class extends Migration
 
     public function up(): void
     {
-        $this->createOzuTable("pages");
+        $this->createOzuTable('pages');
 
         Schema::table('pages', function (Blueprint $table) {
             $table->string('key')->nullable()->unique();
         });
     }
-
 };

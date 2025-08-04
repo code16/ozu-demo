@@ -12,7 +12,7 @@ class AboutPageController extends Controller
         return view('pages.about', [
             'page' => Page::query()
                 ->where('key', 'about')
-                ->firstOrFail()
+                ->firstOrFail(),
         ]);
     }
 }

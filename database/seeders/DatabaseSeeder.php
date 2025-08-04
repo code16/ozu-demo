@@ -38,7 +38,7 @@ class DatabaseSeeder extends OzuSeeder
             ]);
 
         $this->seedVideoEmbed($aboutPage, 'content', 'https://www.youtube.com/watch?v=ZBYZHeB67O4');
-        $this->seedQuoteEmbed($aboutPage, "content", "We're building a new way to create websites without the hassle of overcomplicating things.", "Code16.");
+        $this->seedQuoteEmbed($aboutPage, 'content', "We're building a new way to create websites without the hassle of overcomplicating things.", 'Code16.');
 
         Project::factory()
             ->count(12)

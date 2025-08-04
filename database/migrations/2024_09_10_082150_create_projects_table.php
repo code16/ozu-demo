@@ -11,7 +11,7 @@ return new class extends Migration
 
     public function up(): void
     {
-        $this->createOzuTable("projects");
+        $this->createOzuTable('projects');
 
         Schema::table('projects', function (Blueprint $table) {
             $table->string('place')->nullable();

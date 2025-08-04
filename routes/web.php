@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\Pages\AboutPageController;
 use App\Http\Controllers\Pages\ContactPageController;
 use App\Http\Controllers\Pages\HomePageController;
-use App\Http\Controllers\Pages\AboutPageController;
 use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 

@@ -48,6 +48,19 @@
             </div>
         </x-ozu-content>
 
+        @if(count($project->quotes))
+            @foreach($project->quotes as $quote)
+                <div class="mt-4">
+                    <blockquote class="border-l-4 border-gray-300 pl-4 italic">
+                        {{ $quote->content }}
+                    </blockquote>
+                    <cite class="block text-right text-sm">
+                        {{ $quote->title }}
+                    </cite>
+                </div>
+            @endforeach
+        @endif
+
         @if(count($project->visuals))
             <div class="mt-12">
                 <div class="grid sm:grid-cols-3 grid-cols-2 gap-4">

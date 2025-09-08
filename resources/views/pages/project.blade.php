@@ -16,14 +16,14 @@
         <x-slot:aside>
             <div class="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
                 <div class="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
-                    @if($previousProject)
-                        <div>
+                    <div>
+                        @if($previousProject)
                             <h2 class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">Previous Project</h2>
                             <x-link href="{{ $previousProject->url }}">
                                 {{ $previousProject->title }}
                             </x-link>
-                        </div>
-                    @endif
+                        @endif
+                    </div>
                     @if($nextProject)
                         <div>
                             <h2 class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">Next Project</h2>

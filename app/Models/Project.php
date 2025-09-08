@@ -30,7 +30,7 @@ class Project extends Model
 
     public function quotes(): HasMany
     {
-        return $this->hasMany(Quote::class)
+        return $this->hasMany(Quote::class, 'parent_id')
             ->orderBy('order');
     }
 
@@ -55,7 +55,7 @@ class Project extends Model
             ->setHasPublicationState()
             ->setIsCreatable()
             ->setIsDeletable(false)
-            ->addSubCollection(Quote::class, 'quotes', 'post_id');
+            ->addSubCollection(Quote::class, 'quotes');
     }
 
     public static function configureOzuCollectionList(OzuCollectionListConfig $config): OzuCollectionListConfig

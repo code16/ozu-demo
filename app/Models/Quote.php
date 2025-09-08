@@ -21,14 +21,14 @@ class Quote extends Model
 
     public function project(): BelongsTo
     {
-        return $this->belongsTo(Project::class);
+        return $this->belongsTo(Project::class, 'parent_id');
     }
 
     public static function configureOzuCollection(OzuCollectionConfig $config): OzuCollectionConfig
     {
         return $config
             ->setLabel('Quotes')
-            ->setIcon('fa-quote');
+            ->setIcon('fa-comment');
     }
 
     public static function configureOzuCollectionList(OzuCollectionListConfig $config): OzuCollectionListConfig

@@ -14,7 +14,7 @@ return new class extends Migration
         $this->createOzuTable('quotes');
 
         Schema::table('quotes', function (Blueprint $table) {
-            $table->foreignId('project_id')->constrained();
+            $table->foreignId('parent_id')->constrained('projects')->cascadeOnDelete();
         });
     }
 };

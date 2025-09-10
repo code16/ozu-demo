@@ -55,7 +55,7 @@ class Project extends Model
             ->setHasPublicationState()
             ->setIsCreatable()
             ->setIsDeletable(false)
-            ->addSubCollection(Quote::class, 'quotes');
+            ->addSubCollection(Quote::class);
     }
 
     public static function configureOzuCollectionList(OzuCollectionListConfig $config): OzuCollectionListConfig

@@ -34,6 +34,8 @@ class Quote extends Model
     public static function configureOzuCollectionList(OzuCollectionListConfig $config): OzuCollectionListConfig
     {
         return $config
+            ->setIsReorderable()
+            ->addColumn(OzuColumn::makeImage('cover', 1))
             ->addColumn(OzuColumn::makeText('title', 4)->setLabel('Author'))
             ->addColumn(OzuColumn::makeText('content', 8)->setLabel('Content'));
     }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dfba965526aad1a5842e8ee706e80a18",
+    "content-hash": "0886143ddf1e683dcd49d021a9caac22",
     "packages": [
         {
             "name": "blade-ui-kit/blade-icons",
@@ -342,21 +342,22 @@
         },
         {
             "name": "code16/ozu-client",
-            "version": "v0.4.9",
+            "version": "v0.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/code16/ozu-client.git",
-                "reference": "4f480506c377e0a2e49279566c6dd4a63e956280"
+                "reference": "c5c6fd5a4467e21dfd3f1b9a29c432041016f793"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/code16/ozu-client/zipball/4f480506c377e0a2e49279566c6dd4a63e956280",
-                "reference": "4f480506c377e0a2e49279566c6dd4a63e956280",
+                "url": "https://api.github.com/repos/code16/ozu-client/zipball/c5c6fd5a4467e21dfd3f1b9a29c432041016f793",
+                "reference": "c5c6fd5a4467e21dfd3f1b9a29c432041016f793",
                 "shasum": ""
             },
             "require": {
                 "code16/embed": "^2.3",
                 "code16/laravel-content-renderer": "^1.1.0",
+                "ext-zip": "*",
                 "guzzlehttp/guzzle": "^7.5",
                 "illuminate/contracts": "^11.0|^12.0",
                 "intervention/image-laravel": "^1.0",
@@ -434,10 +435,10 @@
                 "ozu-client"
             ],
             "support": {
-                "source": "https://github.com/code16/ozu-client/tree/v0.4.9",
+                "source": "https://github.com/code16/ozu-client/tree/v0.6.1",
                 "issues": "https://github.com/code16/ozu-client/issues"
             },
-            "time": "2025-08-05T09:30:20+00:00"
+            "time": "2025-10-28T13:01:43+00:00"
         },
         {
             "name": "code16/pint-config",

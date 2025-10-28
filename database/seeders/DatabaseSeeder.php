@@ -33,13 +33,15 @@ class DatabaseSeeder extends OzuSeeder
                 'title' => 'Meet the team',
                 'key' => 'about',
                 'content' => collect(range(2, 4))
-                    ->map(fn ($paragraph) => '<p>'.fake()->paragraph(5).'</p>')
-                    ->implode(''),
+                    ->map(fn () => '<p>'.fake()->paragraph().'</p>')
+                    ->implode("\n")
+                    .$this->makeImageEmbed()
+                    .$this->makeVideoEmbed('https://www.youtube.com/watch?v=ZBYZHeB67O4')
+                    .$this->makeQuoteEmbed(
+                        'We’re building a new way to create websites without the hassle of overcomplicating things.',
+                        'Code16.'
+                    ),
             ]);
-
-        $this->seedImageEmbed($aboutPage, 'content');
-        $this->seedVideoEmbed($aboutPage, 'content', 'https://www.youtube.com/watch?v=ZBYZHeB67O4');
-        $this->seedQuoteEmbed($aboutPage, 'content', "We're building a new way to create websites without the hassle of overcomplicating things.", 'Code16.');
 
         Project::factory()
             ->count(12)

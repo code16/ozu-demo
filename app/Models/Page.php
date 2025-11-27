@@ -54,6 +54,7 @@ class Page extends Model
                     OzuEditorToolbarButton::OrderedList,
                 ])
             )
+            ->configureTitleField(fn (OzuEditorField $field) => $field->setToolbar([OzuEditorToolbarButton::Bold, OzuEditorToolbarButton::Italic]))
             ->addCustomField(
                 OzuField::makeText('key')
                     ->setLabel('Key')

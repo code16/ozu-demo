@@ -1,5 +1,7 @@
 <?php
 
+use App\Settings\Settings;
+
 return [
     // List here your collections, ie the Models that will be handled by the Ozu CMS.
     // You must also properly configure them (see documentation).
@@ -7,6 +9,9 @@ return [
         \App\Models\Project::class,
         \App\Models\Page::class,
     ],
+
+    // The \Code16\OzuClient\Support\Settings\OzuSiteSettings implementation to manage your site general settings
+    'settings' => Settings::class,
 
     // The Ozu unique key of the website to use
     'website_key' => env('OZU_WEBSITE_KEY'),

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1bc500029bf9409055eb86e18d1a1c11",
+    "content-hash": "ef6a072a85c490fcbb8f6146e6c6aca3",
     "packages": [
         {
             "name": "blade-ui-kit/blade-icons",
@@ -342,16 +342,16 @@
         },
         {
             "name": "code16/ozu-client",
-            "version": "v0.8.0",
+            "version": "dev-use-sanctum",
             "source": {
                 "type": "git",
                 "url": "https://github.com/code16/ozu-client.git",
-                "reference": "4f0f2bb72d012868657fc6c1bc73f6732c795e8b"
+                "reference": "877d3c9ee7597facfa20714c75cc35b92ce38fdf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/code16/ozu-client/zipball/4f0f2bb72d012868657fc6c1bc73f6732c795e8b",
-                "reference": "4f0f2bb72d012868657fc6c1bc73f6732c795e8b",
+                "url": "https://api.github.com/repos/code16/ozu-client/zipball/877d3c9ee7597facfa20714c75cc35b92ce38fdf",
+                "reference": "877d3c9ee7597facfa20714c75cc35b92ce38fdf",
                 "shasum": ""
             },
             "require": {
@@ -435,10 +435,10 @@
                 "ozu-client"
             ],
             "support": {
-                "source": "https://github.com/code16/ozu-client/tree/v0.8.0",
+                "source": "https://github.com/code16/ozu-client/tree/use-sanctum",
                 "issues": "https://github.com/code16/ozu-client/issues"
             },
-            "time": "2025-11-27T10:41:21+00:00"
+            "time": "2025-11-27T14:28:36+00:00"
         },
         {
             "name": "code16/pint-config",
@@ -10553,8 +10553,10 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": {},
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "code16/ozu-client": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

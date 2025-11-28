@@ -11,8 +11,7 @@ return [
     ],
 
     // The \Code16\OzuClient\Support\Settings\OzuSiteSettings implementation to manage your site general settings.
-    // In test CI (which uses production env), do not declare settings to avoid pulling data from an inexistent ozu instance
-    'settings' => config('app.env') == 'production' ? null : Settings::class,
+    'settings' => Settings::class,
 
     // The Ozu unique key of the website to use
     'website_key' => env('OZU_WEBSITE_KEY'),

@@ -50,13 +50,18 @@
 
         @if(count($project->quotes))
             @foreach($project->quotes as $quote)
-                <div class="mt-4">
-                    <blockquote class="border-l-4 border-gray-300 pl-4 italic">
-                        {{ $quote->content }}
-                    </blockquote>
-                    <cite class="block text-right text-sm">
-                        {{ $quote->title }}
-                    </cite>
+                <div class="mt-4 flex !border-t-0">
+                    @if($quote->cover)
+                        <img class="max-w-28 flex-shrink" src="{{$quote->cover->thumbnail()}}" />
+                    @endif
+                    <div class="flex flex-col justify-center">
+                        <blockquote class="@if(!$quote->cover)border-l-4 border-gray-300 @endif pl-4 italic">
+                            {!! $quote->content !!}
+                        </blockquote>
+                        <cite class="block text-right text-sm">
+                            {{ $quote->title }}
+                        </cite>
+                    </div>
                 </div>
             @endforeach
         @endif

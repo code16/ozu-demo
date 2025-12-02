@@ -342,16 +342,16 @@
         },
         {
             "name": "code16/ozu-client",
-            "version": "v0.8.3",
+            "version": "v0.8.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/code16/ozu-client.git",
-                "reference": "573de28d38136165f3472693c7ec248af847c8db"
+                "reference": "3f5a76eee58d09204c80d750a1510f5af6edecfb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/code16/ozu-client/zipball/573de28d38136165f3472693c7ec248af847c8db",
-                "reference": "573de28d38136165f3472693c7ec248af847c8db",
+                "url": "https://api.github.com/repos/code16/ozu-client/zipball/3f5a76eee58d09204c80d750a1510f5af6edecfb",
+                "reference": "3f5a76eee58d09204c80d750a1510f5af6edecfb",
                 "shasum": ""
             },
             "require": {
@@ -362,7 +362,7 @@
                 "guzzlehttp/guzzle": "^7.5",
                 "illuminate/contracts": "^11.0|^12.0",
                 "intervention/image-laravel": "^1.0",
-                "php": "8.4.*",
+                "php": "8.4.*|8.5.*",
                 "spatie/laravel-package-tools": "^1.14.0",
                 "spatie/laravel-sluggable": "^3.6"
             },
@@ -435,10 +435,10 @@
                 "ozu-client"
             ],
             "support": {
-                "source": "https://github.com/code16/ozu-client/tree/v0.8.3",
+                "source": "https://github.com/code16/ozu-client/tree/v0.8.4",
                 "issues": "https://github.com/code16/ozu-client/issues"
             },
-            "time": "2025-12-01T11:11:07+00:00"
+            "time": "2025-12-02T11:21:13+00:00"
         },
         {
             "name": "code16/pint-config",

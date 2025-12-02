@@ -12,6 +12,7 @@ use Code16\OzuClient\OzuCms\OzuCollectionListConfig;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 
@@ -24,6 +25,12 @@ class Project extends Model
     {
         return $this->morphMany(Media::class, 'model')
             ->where('model_key', 'visuals')
+            ->orderBy('order');
+    }
+
+    public function quotes(): HasMany
+    {
+        return $this->hasMany(Quote::class, 'parent_id')
             ->orderBy('order');
     }
 
@@ -47,7 +54,8 @@ class Project extends Model
             ->setIcon('fa-ruler-combined')
             ->setHasPublicationState()
             ->setIsCreatable()
-            ->setIsDeletable(false);
+            ->setIsDeletable(false)
+            ->addSubCollection(Quote::class);
     }
 
     public static function configureOzuCollectionList(OzuCollectionListConfig $config): OzuCollectionListConfig

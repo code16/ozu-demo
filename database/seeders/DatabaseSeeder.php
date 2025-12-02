@@ -4,14 +4,12 @@ namespace Database\Seeders;
 
 use App\Models\Page;
 use App\Models\Project;
+use App\Models\Quote;
 use Code16\OzuClient\Eloquent\Media;
 use Code16\OzuClient\Support\Database\OzuSeeder;
 
 class DatabaseSeeder extends OzuSeeder
 {
-    /**
-     * Seed the application's database.
-     */
     public function run(): void
     {
         $this->clearMediaDirectory();
@@ -52,6 +50,7 @@ class DatabaseSeeder extends OzuSeeder
                 'year' => fake()->numberBetween(2000, date('Y')),
                 'place' => fake()->city,
             ])
-            ->create();
+            ->create()
+            ->each(fn ($project) => Quote::factory()->count(rand(1, 3))->for($project)->create());
     }
 }

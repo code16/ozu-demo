@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3d09a6b82c2def91f53aa53dd2a12bd2",
+    "content-hash": "ce207e697a9a5fbfeab34dab9171d7e9",
     "packages": [
         {
             "name": "blade-ui-kit/blade-icons",
@@ -342,16 +342,16 @@
         },
         {
             "name": "code16/ozu-client",
-            "version": "dev-pull-ozu-data-in-worker",
+            "version": "v0.8.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/code16/ozu-client.git",
-                "reference": "f28417e59f199807be2e13f0bc5462068735122b"
+                "reference": "1bf055e24621868c953f73b81f98f68b1cb241f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/code16/ozu-client/zipball/f28417e59f199807be2e13f0bc5462068735122b",
-                "reference": "f28417e59f199807be2e13f0bc5462068735122b",
+                "url": "https://api.github.com/repos/code16/ozu-client/zipball/1bf055e24621868c953f73b81f98f68b1cb241f0",
+                "reference": "1bf055e24621868c953f73b81f98f68b1cb241f0",
                 "shasum": ""
             },
             "require": {
@@ -436,10 +436,10 @@
                 "ozu-client"
             ],
             "support": {
-                "source": "https://github.com/code16/ozu-client/tree/pull-ozu-data-in-worker",
+                "source": "https://github.com/code16/ozu-client/tree/v0.8.5",
                 "issues": "https://github.com/code16/ozu-client/issues"
             },
-            "time": "2025-12-02T14:10:34+00:00"
+            "time": "2025-12-04T09:47:10+00:00"
         },
         {
             "name": "code16/pint-config",
@@ -10830,9 +10830,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "code16/ozu-client": 20
-    },
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

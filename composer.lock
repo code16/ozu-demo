@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ce207e697a9a5fbfeab34dab9171d7e9",
+    "content-hash": "6a6f7b559c848f2b906ff0bb56424e85",
     "packages": [
         {
             "name": "blade-ui-kit/blade-icons",
@@ -342,16 +342,16 @@
         },
         {
             "name": "code16/ozu-client",
-            "version": "v0.8.9",
+            "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/code16/ozu-client.git",
-                "reference": "c62ba8f3d274d3e2cce8dfb640f1d6b7476d67c6"
+                "reference": "566214ce973793db7927a8c18d9a20435296538f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/code16/ozu-client/zipball/c62ba8f3d274d3e2cce8dfb640f1d6b7476d67c6",
-                "reference": "c62ba8f3d274d3e2cce8dfb640f1d6b7476d67c6",
+                "url": "https://api.github.com/repos/code16/ozu-client/zipball/566214ce973793db7927a8c18d9a20435296538f",
+                "reference": "566214ce973793db7927a8c18d9a20435296538f",
                 "shasum": ""
             },
             "require": {
@@ -378,6 +378,7 @@
                 "pestphp/pest-plugin-laravel": "^3.0",
                 "spatie/laravel-ray": "^1.26"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -438,10 +439,10 @@
                 "ozu-client"
             ],
             "support": {
-                "source": "https://github.com/code16/ozu-client/tree/v0.8.9",
+                "source": "https://github.com/code16/ozu-client/tree/v0.8.10",
                 "issues": "https://github.com/code16/ozu-client/issues"
             },
-            "time": "2026-01-08T10:14:31+00:00"
+            "time": "2026-01-08T15:02:43+00:00"
         },
         {
             "name": "code16/pint-config",
@@ -10967,7 +10968,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {},
+    "stability-flags": {
+        "code16/ozu-client": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
